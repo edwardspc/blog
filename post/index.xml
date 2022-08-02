@@ -15,7 +15,7 @@
         <description>&lt;p&gt;To browse WSL file system:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;open explorer&lt;/li&gt;
-&lt;li&gt;\wsl$&lt;/li&gt;
+&lt;li&gt;\\wsl$&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>
