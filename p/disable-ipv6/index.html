@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='To disable ipv6:
-1 2 3 4 5 6 cat &amp;lt;&amp;lt;EOF | sudo tee /etc/sysctl.conf net.ipv4.ip_forward=1 net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1 net.ipv6.conf.lo.disable_ipv6=1 EOF 1 sudo sysctl -p '><title>Disable ipv6</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Disable support of IPV6'><title>Disable ipv6</title>
 
 <link rel='canonical' href='https://edwardspc.github.io/blog/p/disable-ipv6/'>
 
 <link rel="stylesheet" href="/blog/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='Disable ipv6'>
-<meta property='og:description' content='To disable ipv6:
-1 2 3 4 5 6 cat &amp;lt;&amp;lt;EOF | sudo tee /etc/sysctl.conf net.ipv4.ip_forward=1 net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1 net.ipv6.conf.lo.disable_ipv6=1 EOF 1 sudo sysctl -p '>
+<meta property='og:description' content='Disable support of IPV6'>
 <meta property='og:url' content='https://edwardspc.github.io/blog/p/disable-ipv6/'>
 <meta property='og:site_name' content='Edward Pacheco'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-08-08T06:43:43-03:00'/><meta property='article:modified_time' content='2022-08-08T06:43:43-03:00'/>
 <meta name="twitter:title" content="Disable ipv6">
-<meta name="twitter:description" content="To disable ipv6:
-1 2 3 4 5 6 cat &amp;lt;&amp;lt;EOF | sudo tee /etc/sysctl.conf net.ipv4.ip_forward=1 net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1 net.ipv6.conf.lo.disable_ipv6=1 EOF 1 sudo sysctl -p ">
+<meta name="twitter:description" content="Disable support of IPV6">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KB76BSXE3K"></script>
 <script>
 var doNotTrack = false;
@@ -257,6 +254,10 @@ if (!doNotTrack) {
         </h2>
     
         
+        <h3 class="article-subtitle">
+            Disable support of IPV6
+        </h3>
+        
     </div>
 
     
@@ -302,6 +303,7 @@ if (!doNotTrack) {
     
     
     <p>To disable ipv6:</p>
+<h3 id="edit-kernel-parameters-sysctl">Edit kernel parameters (sysctl)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -320,7 +322,8 @@ if (!doNotTrack) {
 </span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><h4 id="reload">Reload</h4>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -490,7 +493,46 @@ if (!doNotTrack) {
             >
 
             </main>
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#edit-kernel-parameters-sysctl">Edit kernel parameters (sysctl)</a>
+          <ol>
+            <li><a href="#reload">Reload</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
         </div>
         <script 

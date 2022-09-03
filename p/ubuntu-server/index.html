@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Quickstart to configure ubuntu server
-Networking 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 cat &amp;lt;&amp;lt;EOF | sudo tee /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 10.0.2.10/24 dhcp4: false gateway4: 10.0.2.1 match: macaddress: 08:00:27:3d:a5:b7 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 routes: - to: 0.0.0.0/24 via: 10.0.2.1 set-name: enp0s3 EOF Restart network 1 sudo systemctl restart systemd-networkd '><title>Ubuntu Server</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='A quick configuration guide to setup ubuntu-server'><title>Ubuntu Server</title>
 
 <link rel='canonical' href='https://edwardspc.github.io/blog/p/ubuntu-server/'>
 
 <link rel="stylesheet" href="/blog/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='Ubuntu Server'>
-<meta property='og:description' content='Quickstart to configure ubuntu server
-Networking 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 cat &amp;lt;&amp;lt;EOF | sudo tee /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 10.0.2.10/24 dhcp4: false gateway4: 10.0.2.1 match: macaddress: 08:00:27:3d:a5:b7 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 routes: - to: 0.0.0.0/24 via: 10.0.2.1 set-name: enp0s3 EOF Restart network 1 sudo systemctl restart systemd-networkd '>
+<meta property='og:description' content='A quick configuration guide to setup ubuntu-server'>
 <meta property='og:url' content='https://edwardspc.github.io/blog/p/ubuntu-server/'>
 <meta property='og:site_name' content='Edward Pacheco'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-08-08T05:57:11-03:00'/><meta property='article:modified_time' content='2022-08-08T05:57:11-03:00'/>
 <meta name="twitter:title" content="Ubuntu Server">
-<meta name="twitter:description" content="Quickstart to configure ubuntu server
-Networking 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 cat &amp;lt;&amp;lt;EOF | sudo tee /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 10.0.2.10/24 dhcp4: false gateway4: 10.0.2.1 match: macaddress: 08:00:27:3d:a5:b7 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 routes: - to: 0.0.0.0/24 via: 10.0.2.1 set-name: enp0s3 EOF Restart network 1 sudo systemctl restart systemd-networkd ">
+<meta name="twitter:description" content="A quick configuration guide to setup ubuntu-server">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KB76BSXE3K"></script>
 <script>
 var doNotTrack = false;
@@ -256,6 +253,10 @@ if (!doNotTrack) {
             <a href="/blog/p/ubuntu-server/">Ubuntu Server</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            A quick configuration guide to setup ubuntu-server
+        </h3>
         
     </div>
 
