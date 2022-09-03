@@ -8,10 +8,10 @@
         <language>en-us</language>
         <lastBuildDate>Sat, 03 Sep 2022 19:14:12 -0300</lastBuildDate><atom:link href="https://edwardspc.github.io/blog/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>QEMU/KVM</title>
-        <link>https://edwardspc.github.io/blog/posts/qemu-kvm/</link>
+        <link>https://edwardspc.github.io/blog/p/qemu/kvm/</link>
         <pubDate>Sat, 03 Sep 2022 19:14:12 -0300</pubDate>
         
-        <guid>https://edwardspc.github.io/blog/posts/qemu-kvm/</guid>
+        <guid>https://edwardspc.github.io/blog/p/qemu/kvm/</guid>
         <description>&lt;p&gt;Comments about qemu-kvm.&lt;/p&gt;
 &lt;h2 id=&#34;a-script-to-run-kvm-based-ubuntu-vms&#34;&gt;A script to run kvm-based Ubuntu VMs&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
