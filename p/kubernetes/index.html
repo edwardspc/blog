@@ -245,10 +245,6 @@ if (!doNotTrack) {
                 linux
             </a>
         
-            <a href="/blog/categories/k8s/" >
-                k8s
-            </a>
-        
     </header>
     
 
@@ -310,22 +306,7 @@ if (!doNotTrack) {
 <ul>
 <li>Tested on september 2022</li>
 </ul>
-<h2 id="install-requisites">Install requisites</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install -y apt-transport-https curl software-properties-common
-</span></span><span class="line"><span class="cl">sudo apt install -y conntrack socat ebtables ethtool
-</span></span><span class="line"><span class="cl">sudo apt install -y docker.io
-</span></span><span class="line"><span class="cl">sudo usermod -aG docker <span class="nv">$USER</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="install-cri-tools">Install cri-tools</h2>
+<h2 id="install-cri-tools">Install cri-tools</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -353,9 +334,21 @@ if (!doNotTrack) {
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://www.mirantis.com/blog/how-to-install-cri-dockerd-and-migrate-nodes-from-dockershim
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install -y apt-transport-https curl software-properties-common
+</span></span><span class="line"><span class="cl">sudo apt install -y conntrack socat ebtables ethtool
+</span></span><span class="line"><span class="cl">sudo apt install -y docker.io
+</span></span><span class="line"><span class="cl">sudo usermod -aG docker <span class="nv">$USER</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">crio
+</span></span><span class="line"><span class="cl">https://www.mirantis.com/blog/how-to-install-cri-dockerd-and-migrate-nodes-from-dockershim
 </span></span><span class="line"><span class="cl">https://github.com/Mirantis/cri-dockerd#build-and-install
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.2.0/cri-dockerd-v0.2.0-linux-amd64.tar.gz
@@ -415,17 +408,6 @@ if (!doNotTrack) {
 </span></span></span><span class="line"><span class="cl"><span class="s2">
 </span></span></span><span class="line"><span class="cl"><span class="s2">minikube start --kubernetes-version=</span><span class="nv">$VERSION</span><span class="s2"> --driver=none --logtostderr -v 10
 </span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="delete-minikube">Delete minikube</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">minikube delete
-</span></span><span class="line"><span class="cl">sudo rm -rf .kube .minikube /etc/kubernetes
-</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </section>
@@ -650,13 +632,11 @@ if (!doNotTrack) {
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#install-requisites">Install requisites</a></li>
     <li><a href="#install-cri-tools">Install cri-tools</a></li>
     <li><a href="#install-cri-docker">Install cri-docker</a></li>
     <li><a href="#install-minikube">Install minikube</a></li>
     <li><a href="#install-kubectl">Install kubectl</a></li>
     <li><a href="#start-minikube">Start minikube</a></li>
-    <li><a href="#delete-minikube">Delete minikube</a></li>
   </ol>
 </nav>
         </div>
