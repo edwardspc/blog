@@ -288,7 +288,7 @@ if (!doNotTrack) {
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    3 minute read
                 </time>
             </div>
         
@@ -401,12 +401,92 @@ if (!doNotTrack) {
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">VERSION</span><span class="o">=</span><span class="k">$(</span>minikube config defaults kubernetes-version<span class="p">|</span>head -n1<span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
 </span></span><span class="line"><span class="cl"><span class="nv">VERSION</span><span class="o">=</span><span class="si">${</span><span class="nv">VERSION</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># consider add sudo</span>
 </span></span><span class="line"><span class="cl">minikube start --kubernetes-version<span class="o">=</span><span class="nv">$VERSION</span> --driver<span class="o">=</span>none --logtostderr -v <span class="m">10</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="troubleshooting">Troubleshooting</h3>
+<p>Installing latest version requires sudo and copy configuration file, check below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">edward@master:~$ minikube start --kubernetes-version<span class="o">=</span><span class="nv">$VERSION</span> --driver<span class="o">=</span>none --logtostderr -v <span class="m">10</span>
+</span></span><span class="line"><span class="cl">I1002 07:23:09.053414   <span class="m">13100</span> out.go:296<span class="o">]</span> Setting OutFile to fd <span class="m">1</span> ...
+</span></span><span class="line"><span class="cl">I1002 07:23:09.053446   <span class="m">13100</span> out.go:343<span class="o">]</span> <span class="nv">TERM</span><span class="o">=</span>xterm,COLORTERM<span class="o">=</span>, which probably does not support color
+</span></span><span class="line"><span class="cl">I1002 07:23:09.053448   <span class="m">13100</span> out.go:309<span class="o">]</span> Setting ErrFile to fd 2...
+</span></span><span class="line"><span class="cl">I1002 07:23:09.053479   <span class="m">13100</span> out.go:343<span class="o">]</span> <span class="nv">TERM</span><span class="o">=</span>xterm,COLORTERM<span class="o">=</span>, which probably does not support color
+</span></span><span class="line"><span class="cl">I1002 07:23:09.053556   <span class="m">13100</span> root.go:333<span class="o">]</span> Updating PATH: /home/edward/.minikube/bin
+</span></span><span class="line"><span class="cl">W1002 07:23:09.053627   <span class="m">13100</span> root.go:310<span class="o">]</span> Error reading config file at /home/edward/.minikube/config/config.json: open /home/edward/.minikube/config/config.json: no such file or directory
+</span></span><span class="line"><span class="cl">I1002 07:23:09.053851   <span class="m">13100</span> out.go:303<span class="o">]</span> Setting JSON to <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">I1002 07:23:09.054723   <span class="m">13100</span> start.go:115<span class="o">]</span> hostinfo: <span class="o">{</span><span class="s2">&#34;hostname&#34;</span>:<span class="s2">&#34;master&#34;</span>,<span class="s2">&#34;uptime&#34;</span>:3042,<span class="s2">&#34;bootTime&#34;</span>:1664703148,<span class="s2">&#34;procs&#34;</span>:225,<span class="s2">&#34;os&#34;</span>:<span class="s2">&#34;linux&#34;</span>,<span class="s2">&#34;platform&#34;</span>:<span class="s2">&#34;ubuntu&#34;</span>,<span class="s2">&#34;platformFamily&#34;</span>:<span class="s2">&#34;debian&#34;</span>,<span class="s2">&#34;platformVersion&#34;</span>:<span class="s2">&#34;20.04&#34;</span>,<span class="s2">&#34;kernelVersion&#34;</span>:<span class="s2">&#34;5.15.0-48-generic&#34;</span>,<span class="s2">&#34;kernelArch&#34;</span>:<span class="s2">&#34;x86_64&#34;</span>,<span class="s2">&#34;virtualizationSystem&#34;</span>:<span class="s2">&#34;kvm&#34;</span>,<span class="s2">&#34;virtualizationRole&#34;</span>:<span class="s2">&#34;host&#34;</span>,<span class="s2">&#34;hostId&#34;</span>:<span class="s2">&#34;350420e7-60d1-4f75-bf66-861f6a5fcb1d&#34;</span><span class="o">}</span>
+</span></span><span class="line"><span class="cl">I1002 07:23:09.054780   <span class="m">13100</span> start.go:125<span class="o">]</span> virtualization: kvm host
+</span></span><span class="line"><span class="cl">I1002 07:23:09.055000   <span class="m">13100</span> out.go:177<span class="o">]</span> * minikube v1.27.0 on Ubuntu 20.04
+</span></span><span class="line"><span class="cl">* minikube v1.27.0 on Ubuntu 20.04
+</span></span><span class="line"><span class="cl">W1002 07:23:09.055073   <span class="m">13100</span> preload.go:295<span class="o">]</span> Failed to list preload files: open /home/edward/.minikube/cache/preloaded-tarball: no such file or directory
+</span></span><span class="line"><span class="cl">I1002 07:23:09.055210   <span class="m">13100</span> notify.go:214<span class="o">]</span> Checking <span class="k">for</span> updates...
+</span></span><span class="line"><span class="cl">W1002 07:23:09.055251   <span class="m">13100</span> out.go:239<span class="o">]</span> ! Kubernetes 1.25.0 has a known issue with resolv.conf. minikube is using a workaround that should work <span class="k">for</span> most use cases.
+</span></span><span class="line"><span class="cl">! Kubernetes 1.25.0 has a known issue with resolv.conf. minikube is using a workaround that should work <span class="k">for</span> most use cases.
+</span></span><span class="line"><span class="cl">W1002 07:23:09.055302   <span class="m">13100</span> out.go:239<span class="o">]</span> ! For more information, see: https://github.com/kubernetes/kubernetes/issues/112135
+</span></span><span class="line"><span class="cl">! For more information, see: https://github.com/kubernetes/kubernetes/issues/112135
+</span></span><span class="line"><span class="cl">I1002 07:23:09.055314   <span class="m">13100</span> driver.go:365<span class="o">]</span> Setting default libvirt URI to qemu:///system
+</span></span><span class="line"><span class="cl">I1002 07:23:09.058236   <span class="m">13100</span> out.go:177<span class="o">]</span> * Using the none driver based on user configuration
+</span></span><span class="line"><span class="cl">* Using the none driver based on user configuration
+</span></span><span class="line"><span class="cl">I1002 07:23:09.058254   <span class="m">13100</span> start.go:284<span class="o">]</span> selected driver: none
+</span></span><span class="line"><span class="cl">I1002 07:23:09.058260   <span class="m">13100</span> start.go:808<span class="o">]</span> validating driver <span class="s2">&#34;none&#34;</span> against &lt;nil&gt;
+</span></span><span class="line"><span class="cl">I1002 07:23:09.058270   <span class="m">13100</span> start.go:819<span class="o">]</span> status <span class="k">for</span> none: <span class="o">{</span>Installed:false Healthy:false Running:false NeedsImprovement:false Error:running the <span class="s1">&#39;none&#39;</span> driver as a regular user requires sudo permissions Reason: Fix: Doc: Version:<span class="o">}</span>
+</span></span><span class="line"><span class="cl">I1002 07:23:09.058381   <span class="m">13100</span> out.go:177<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">W1002 07:23:09.058415   <span class="m">13100</span> out.go:239<span class="o">]</span> * Exiting due to PROVIDER_NONE_NOT_FOUND: The <span class="s1">&#39;none&#39;</span> provider was not found: running the <span class="s1">&#39;none&#39;</span> driver as a regular user requires sudo permissions
+</span></span><span class="line"><span class="cl">* Exiting due to PROVIDER_NONE_NOT_FOUND: The <span class="s1">&#39;none&#39;</span> provider was not found: running the <span class="s1">&#39;none&#39;</span> driver as a regular user requires sudo permissions
+</span></span><span class="line"><span class="cl">I1002 07:23:09.058423   <span class="m">13100</span> out.go:177<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p <span class="nv">$HOME</span>/.kube
+</span></span><span class="line"><span class="cl">sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+</span></span><span class="line"><span class="cl">sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -636,7 +716,11 @@ if (!doNotTrack) {
     <li><a href="#install-cri-docker">Install cri-docker</a></li>
     <li><a href="#install-minikube">Install minikube</a></li>
     <li><a href="#install-kubectl">Install kubectl</a></li>
-    <li><a href="#start-minikube">Start minikube</a></li>
+    <li><a href="#start-minikube">Start minikube</a>
+      <ol>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
