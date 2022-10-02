@@ -340,6 +340,7 @@ if (!doNotTrack) {
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install -y apt-transport-https curl software-properties-common
@@ -347,9 +348,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">sudo apt install -y docker.io
 </span></span><span class="line"><span class="cl">sudo usermod -aG docker <span class="nv">$USER</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">crio
-</span></span><span class="line"><span class="cl">https://www.mirantis.com/blog/how-to-install-cri-dockerd-and-migrate-nodes-from-dockershim
-</span></span><span class="line"><span class="cl">https://github.com/Mirantis/cri-dockerd#build-and-install
+</span></span><span class="line"><span class="cl"><span class="c1">#crio</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.2.0/cri-dockerd-v0.2.0-linux-amd64.tar.gz
 </span></span><span class="line"><span class="cl">tar xvf cri-dockerd-v0.2.0-linux-amd64.tar.gz
@@ -362,8 +361,11 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">sudo sed -i -e <span class="s1">&#39;s,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,&#39;</span> /etc/systemd/system/cri-docker.service
 </span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
 </span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now cri-docker.socket
-</span></span><span class="line"><span class="cl">sudo systemctl status cri-docker.socket
 </span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#status</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status cri-docker.socket
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="install-minikube">Install minikube</h2>
@@ -490,7 +492,14 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><h2 id="references">References</h2>
+<ol>
+<li><a class="link" href="https://github.com/Mirantis/cri-dockerd"  target="_blank" rel="noopener"
+    >cri-dockerd</a></li>
+<li><a class="link" href="https://www.mirantis.com/blog/how-to-install-cri-dockerd-and-migrate-nodes-from-dockershim"  target="_blank" rel="noopener"
+    >How to install cri-dockerd and migrate nodes from dockershim</a></li>
+</ol>
+
 </section>
 
 
@@ -723,6 +732,7 @@ if (!doNotTrack) {
         <li><a href="#sudo-error">sudo error</a></li>
       </ol>
     </li>
+    <li><a href="#references">References</a></li>
   </ol>
 </nav>
         </div>
