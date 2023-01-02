@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://edwardspc.github.io/blog/</loc>
+    <lastmod>2023-01-02T05:55:41-03:00</lastmod>
+  </url><url>
+    <loc>https://edwardspc.github.io/blog/post/</loc>
+    <lastmod>2023-01-02T05:55:41-03:00</lastmod>
+  </url><url>
+    <loc>https://edwardspc.github.io/blog/p/symbols/</loc>
+    <lastmod>2023-01-02T05:55:41-03:00</lastmod>
+  </url><url>
     <loc>https://edwardspc.github.io/blog/categories/</loc>
     <lastmod>2022-09-24T14:30:36-03:00</lastmod>
   </url><url>
-    <loc>https://edwardspc.github.io/blog/</loc>
-    <lastmod>2022-09-24T14:30:36-03:00</lastmod>
-  </url><url>
     <loc>https://edwardspc.github.io/blog/categories/k8s/</loc>
-    <lastmod>2022-09-24T14:30:36-03:00</lastmod>
-  </url><url>
-    <loc>https://edwardspc.github.io/blog/post/</loc>
     <lastmod>2022-09-24T14:30:36-03:00</lastmod>
   </url><url>
     <loc>https://edwardspc.github.io/blog/p/prometheus/</loc>
